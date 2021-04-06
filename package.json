@@ -1,0 +1,27 @@
+{
+  "name": "usnack",
+  "version": "0.0.1",
+  "description": "Simple snackbar component for Android and iOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Usbac/usnack.git"
+  },
+  "keywords": [
+    "snackbar",
+    "react",
+    "native",
+    "cross-platform",
+    "android",
+    "ios"
+  ],
+  "author": "usbac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Usbac/usnack/issues"
+  },
+  "homepage": "https://github.com/Usbac/usnack#readme"
+}
