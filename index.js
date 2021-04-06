@@ -42,8 +42,8 @@ const STYLES = StyleSheet.create({
 
 /**
  * Animates a fade effect.
- * @param {double} duration the duration of the effect.
- * @param {number} toValue the opacity value.
+ * @param {Number} duration the duration of the effect.
+ * @param {Number} to_value the opacity value.
  */
 const fade = (duration, to_value) => {
     Animated.timing(fade_anim, {
