@@ -2,14 +2,13 @@ import React from 'react';
 import { Animated, StyleSheet, Text, View } from 'react-native';
 
 /**
- * Default duration of the fade effect.
+ * Default configuration.
  */
-const DEFAULT_EFFECT_DURATION = 1000;
-
-/**
- * Default duration of the snack.
- */
-const DEFAULT_DURATION = 3000;
+const DEFAULT = {
+    duration: 3000,
+    effect_duration: 1000,
+    native_driver: true,
+};
 
 /**
  * Default styles.
@@ -37,19 +36,20 @@ const STYLES = StyleSheet.create({
     text: {
         color: 'white',
         fontWeight: 'bold',
+        textAlign: 'center',
     }
 });
 
 /**
  * Animates a fade effect.
- * @param {Number} duration the duration of the effect.
+ * @param {Object} config the configuration of the effect.
  * @param {Number} to_value the opacity value.
  */
-const fade = (duration, to_value) => {
+const fade = (config, to_value) => {
     Animated.timing(fade_anim, {
         toValue: to_value,
-        duration: duration,
-        useNativeDriver: true,
+        duration: config.effect_duration,
+        useNativeDriver: config.native_driver,
     }).start();
 }
 
@@ -57,14 +57,12 @@ let fade_anim = new Animated.Value(0);
 
 export default {
     show: (props = {}) => {
-        let effect_duration = props.effect_duration ?
-            props.effect_duration :
-            DEFAULT_EFFECT_DURATION;
+        let config = Object.assign(DEFAULT, props);
 
-        fade(effect_duration, 1);
+        fade(config, 1);
         setTimeout(() => {
-            fade(effect_duration, 0);
-        }, props.duration ? props.duration : DEFAULT_DURATION);
+            fade(config, 0);
+        }, config.duration);
     },
     component: (props) => (
         <Animated.View
@@ -75,9 +73,12 @@ export default {
             ]}
             pointerEvents='none'
         >
-            <View style={[ STYLES.snack, props.snackStyle ]}>
-                <Text style={[ STYLES.text, props.textStyle ]}>{props.text ? props.text : ''}</Text>
-            </View>
+            {
+                props.text !== '' &&
+                <View style={[ STYLES.snack, props.snackStyle ]}>
+                    <Text style={[ STYLES.text, props.textStyle ]}>{props.text}</Text>
+                </View>
+            }
         </Animated.View>
     ),
 };

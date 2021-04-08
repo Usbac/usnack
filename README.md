@@ -7,7 +7,7 @@
 <p align="center">Simple snackbar component for Android and iOS.</p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/stable-0.0.1-blue.svg">
+    <img src="https://img.shields.io/badge/stable-0.0.2-blue.svg">
     <img src="https://img.shields.io/badge/license-MIT-orange.svg">
 </p>
 
@@ -52,11 +52,13 @@ Usnack.show();
 
 Fades in all the `Usnack.component`s.
 
-The optional parameter `options` can have the following properties:
+The optional parameter `options` must be an object which can have the following properties:
 
 * **duration** (The display time in milliseconds, by default it is `3000`).
 
 * **effect_duration** (The fade in and out duration time in milliseconds, by default it is `1000`).
+
+* **native_driver** (Use or not the native driver, by default it is `true`).
 
 ## Examples
 
