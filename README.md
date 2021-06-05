@@ -7,7 +7,7 @@
 <p align="center">Simple snackbar component for Android and iOS.</p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/stable-0.0.2-blue.svg">
+    <img src="https://img.shields.io/badge/stable-1.0.0-blue.svg">
     <img src="https://img.shields.io/badge/license-MIT-orange.svg">
 </p>
 
