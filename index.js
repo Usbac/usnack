@@ -4,10 +4,11 @@ import { Animated, StyleSheet, Text, View } from 'react-native';
 /**
  * Default configuration.
  */
-const DEFAULT = {
+const DEFAULT_CONFIG = {
     duration: 3000,
     effect_duration: 1000,
     native_driver: true,
+    opacity: 1,
 };
 
 /**
@@ -56,27 +57,25 @@ const fade = (config, to_value) => {
 let fade_anim = new Animated.Value(0);
 
 export default {
-    show: (props = {}) => {
-        let config = Object.assign(DEFAULT, props);
+    show: (config = {}) => {
+        config = Object.assign(DEFAULT_CONFIG, config);
 
-        fade(config, 1);
-        setTimeout(() => {
-            fade(config, 0);
-        }, config.duration);
+        fade(config, config.opacity);
+        setTimeout(() => fade(config, 0), config.duration);
     },
-    component: (props) => (
+    component: ({ containerStyle, snackStyle, textStyle, text }) => (
         <Animated.View
             style={[
                 STYLES.container,
                 { opacity: fade_anim },
-                props.containerStyle,
+                containerStyle,
             ]}
             pointerEvents='none'
         >
             {
-                props.text !== '' &&
-                <View style={[ STYLES.snack, props.snackStyle ]}>
-                    <Text style={[ STYLES.text, props.textStyle ]}>{props.text}</Text>
+                text !== '' &&
+                <View style={[ STYLES.snack, snackStyle ]}>
+                    <Text style={[ STYLES.text, textStyle ]}>{text}</Text>
                 </View>
             }
         </Animated.View>

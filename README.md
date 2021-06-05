@@ -23,6 +23,12 @@ Its default style may remind you the one used in the Instagram app.
 npm install usnack
 ```
 
+or yarn:
+
+```bash
+yarn add usnack
+```
+
 2. Import in your Js:
 
 ```js
@@ -48,7 +54,7 @@ Usnack.show();
 
 ## Show
 
-`show([options])`
+`show(options = {})`
 
 Fades in all the `Usnack.component`s.
 
@@ -59,6 +65,8 @@ The optional parameter `options` must be an object which can have the following 
 * **effect_duration** (The fade in and out duration time in milliseconds, by default it is `1000`).
 
 * **native_driver** (Use or not the native driver, by default it is `true`).
+
+* **opacity** (The final opacity, by default it is `1`).
 
 ## Examples
 
