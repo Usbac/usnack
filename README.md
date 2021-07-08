@@ -1,5 +1,4 @@
 <h1 align="center">
-  <br>
   Usnack
   <br>
 </h1>
@@ -7,11 +6,16 @@
 <p align="center">Simple snackbar component for Android and iOS.</p>
 
 <p align="center">
+    <img src="https://img.shields.io/npm/dm/usnack.svg">
     <img src="https://img.shields.io/badge/stable-1.0.0-blue.svg">
     <img src="https://img.shields.io/badge/license-MIT-orange.svg">
 </p>
 
 Usnack is a simple snackbar component that works seamlessly in Android and iOS, it does not have any external dependency and is extremely easy to import and use.
+
+<p align="center">
+  <img src="https://i.imgur.com/iOtPMF2.gif" width="400"/>  
+</p>
 
 Its default style may remind you the one used in the Instagram app.
 
